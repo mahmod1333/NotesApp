@@ -23,7 +23,7 @@ function addnotes( texts = '') {
     </button>
    
 </div>
-<div class="main hidden"><p></p> </div>
+<div class="main hidden"> </div>
     <textarea></textarea>
 `;
 document.body.appendChild(note);
@@ -33,11 +33,11 @@ const mainEl = note.querySelector('.main');
 const text = note.querySelector('textarea');
 text.value = texts;
  "[object PointerEvent]" ===  text.value ? text.value = '' : text.value = texts;
-  mainEl.querySelector('p').innerHTML = text.value;
+  mainEl.innerHTML = text.value;
 text.addEventListener('input', (e) => {
  
     const { value } = e.target;
-    mainEl.querySelector('p').innerHTML =  marked(value); 
+    mainEl.innerHTML =  marked(value); 
     updateLs();
 });
 
